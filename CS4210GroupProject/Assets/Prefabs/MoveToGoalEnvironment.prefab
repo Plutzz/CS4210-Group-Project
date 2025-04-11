@@ -334,7 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8651770897231939709}
   m_Layer: 0
-  m_Name: Environment
+  m_Name: MoveToGoalEnvironment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -781,10 +781,14 @@ PrefabInstance:
     - target: {fileID: 7426289927799267859, guid: 395e0fb7d740d4d49b7ab4ce171d17a8, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 2bbef401355361b49a9478883bbb6909, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 6c2b0468cb1ccba4fac39c49c5a0a712, type: 3}
     - target: {fileID: 7426289927799267859, guid: 395e0fb7d740d4d49b7ab4ce171d17a8, type: 3}
       propertyPath: m_BehaviorType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426289927799267859, guid: 395e0fb7d740d4d49b7ab4ce171d17a8, type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -3,7 +3,7 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
-public class MoveToGoalAgent : Agent
+public class ChaserAgent : Agent
 {
     [SerializeField] private Transform target;
     [SerializeField] private Rigidbody rb;
@@ -38,6 +38,7 @@ public class MoveToGoalAgent : Agent
     {
         sensor.AddObservation(transform.localPosition);
         sensor.AddObservation(target.localPosition);
+        sensor.AddObservation(rb.linearVelocity);
     }
 
     

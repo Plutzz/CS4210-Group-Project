@@ -1,0 +1,51 @@
+{
+    "EvaderAgent": {
+        "checkpoints": [
+            {
+                "steps": 4981,
+                "file_path": "results\\Tag_1\\EvaderAgent\\EvaderAgent-4981.onnx",
+                "reward": 8.284482217040555,
+                "creation_time": 1745278191.0950584,
+                "auxillary_file_paths": [
+                    "results\\Tag_1\\EvaderAgent\\EvaderAgent-4981.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4981,
+            "file_path": "results\\Tag_1\\EvaderAgent.onnx",
+            "reward": 8.284482217040555,
+            "creation_time": 1745278191.0950584,
+            "auxillary_file_paths": [
+                "results\\Tag_1\\EvaderAgent\\EvaderAgent-4981.pt"
+            ]
+        }
+    },
+    "ChaserAgent": {
+        "checkpoints": [
+            {
+                "steps": 4981,
+                "file_path": "results\\Tag_1\\ChaserAgent\\ChaserAgent-4981.onnx",
+                "reward": -8.284482217040555,
+                "creation_time": 1745278191.1248698,
+                "auxillary_file_paths": [
+                    "results\\Tag_1\\ChaserAgent\\ChaserAgent-4981.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4981,
+            "file_path": "results\\Tag_1\\ChaserAgent.onnx",
+            "reward": -8.284482217040555,
+            "creation_time": 1745278191.1248698,
+            "auxillary_file_paths": [
+                "results\\Tag_1\\ChaserAgent\\ChaserAgent-4981.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.6.0+cpu"
+    }
+}

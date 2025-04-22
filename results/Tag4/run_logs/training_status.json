@@ -1,0 +1,87 @@
+{
+    "ChaserAgent": {
+        "checkpoints": [
+            {
+                "steps": 499978,
+                "file_path": "results\\Tag4\\ChaserAgent\\ChaserAgent-499978.onnx",
+                "reward": -16.175514452798026,
+                "creation_time": 1745287581.3250704,
+                "auxillary_file_paths": [
+                    "results\\Tag4\\ChaserAgent\\ChaserAgent-499978.pt"
+                ]
+            },
+            {
+                "steps": 999962,
+                "file_path": "results\\Tag4\\ChaserAgent\\ChaserAgent-999962.onnx",
+                "reward": -18.934411975682952,
+                "creation_time": 1745288136.6836352,
+                "auxillary_file_paths": [
+                    "results\\Tag4\\ChaserAgent\\ChaserAgent-999962.pt"
+                ]
+            },
+            {
+                "steps": 1033345,
+                "file_path": "results\\Tag4\\ChaserAgent\\ChaserAgent-1033345.onnx",
+                "reward": -17.72133926081555,
+                "creation_time": 1745288163.5810726,
+                "auxillary_file_paths": [
+                    "results\\Tag4\\ChaserAgent\\ChaserAgent-1033345.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1033345,
+            "file_path": "results\\Tag4\\ChaserAgent.onnx",
+            "reward": -17.72133926081555,
+            "creation_time": 1745288163.5810726,
+            "auxillary_file_paths": [
+                "results\\Tag4\\ChaserAgent\\ChaserAgent-1033345.pt"
+            ]
+        }
+    },
+    "EvaderAgent": {
+        "checkpoints": [
+            {
+                "steps": 499958,
+                "file_path": "results\\Tag4\\EvaderAgent\\EvaderAgent-499958.onnx",
+                "reward": -3.6375580269756704,
+                "creation_time": 1745287597.571461,
+                "auxillary_file_paths": [
+                    "results\\Tag4\\EvaderAgent\\EvaderAgent-499958.pt"
+                ]
+            },
+            {
+                "steps": 999965,
+                "file_path": "results\\Tag4\\EvaderAgent\\EvaderAgent-999965.onnx",
+                "reward": -1.4518332164734602,
+                "creation_time": 1745288163.548358,
+                "auxillary_file_paths": [
+                    "results\\Tag4\\EvaderAgent\\EvaderAgent-999965.pt"
+                ]
+            },
+            {
+                "steps": 1000029,
+                "file_path": "results\\Tag4\\EvaderAgent\\EvaderAgent-1000029.onnx",
+                "reward": -1.4518332164734602,
+                "creation_time": 1745288163.6178887,
+                "auxillary_file_paths": [
+                    "results\\Tag4\\EvaderAgent\\EvaderAgent-1000029.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1000029,
+            "file_path": "results\\Tag4\\EvaderAgent.onnx",
+            "reward": -1.4518332164734602,
+            "creation_time": 1745288163.6178887,
+            "auxillary_file_paths": [
+                "results\\Tag4\\EvaderAgent\\EvaderAgent-1000029.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.6.0+cpu"
+    }
+}

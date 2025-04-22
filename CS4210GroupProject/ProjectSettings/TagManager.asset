@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Goal
   - Wall
+  - Evader
   layers:
   - Default
   - TransparentFX

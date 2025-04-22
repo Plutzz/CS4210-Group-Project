@@ -1,0 +1,69 @@
+{
+    "EvaderAgent": {
+        "checkpoints": [
+            {
+                "steps": 499967,
+                "file_path": "results\\Tag2\\EvaderAgent\\EvaderAgent-499967.onnx",
+                "reward": -0.35055693309706976,
+                "creation_time": 1745283901.4942682,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\EvaderAgent\\EvaderAgent-499967.pt"
+                ]
+            },
+            {
+                "steps": 500031,
+                "file_path": "results\\Tag2\\EvaderAgent\\EvaderAgent-500031.onnx",
+                "reward": -0.35055693309706976,
+                "creation_time": 1745283901.554204,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\EvaderAgent\\EvaderAgent-500031.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500031,
+            "file_path": "results\\Tag2\\EvaderAgent.onnx",
+            "reward": -0.35055693309706976,
+            "creation_time": 1745283901.554204,
+            "auxillary_file_paths": [
+                "results\\Tag2\\EvaderAgent\\EvaderAgent-500031.pt"
+            ]
+        }
+    },
+    "ChaserAgent": {
+        "checkpoints": [
+            {
+                "steps": 499967,
+                "file_path": "results\\Tag2\\ChaserAgent\\ChaserAgent-499967.onnx",
+                "reward": 0.35055693309706976,
+                "creation_time": 1745283901.5291092,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\ChaserAgent\\ChaserAgent-499967.pt"
+                ]
+            },
+            {
+                "steps": 500031,
+                "file_path": "results\\Tag2\\ChaserAgent\\ChaserAgent-500031.onnx",
+                "reward": 0.35055693309706976,
+                "creation_time": 1745283901.5858893,
+                "auxillary_file_paths": [
+                    "results\\Tag2\\ChaserAgent\\ChaserAgent-500031.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500031,
+            "file_path": "results\\Tag2\\ChaserAgent.onnx",
+            "reward": 0.35055693309706976,
+            "creation_time": 1745283901.5858893,
+            "auxillary_file_paths": [
+                "results\\Tag2\\ChaserAgent\\ChaserAgent-500031.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.6.0+cpu"
+    }
+}

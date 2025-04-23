@@ -11,16 +11,12 @@ public class EvaderAgent : Agent
     [SerializeField] private Rigidbody rb;
     [SerializeField] private MeshRenderer floorRenderer;
     [SerializeField] private float moveSpeed = 4f, rotateSpeed = 4f, jumpForce = 10f, gravity = 9.81f;
-    [SerializeField] private TextMeshPro rewardText;
-    [SerializeField] private float maxSurvivalTime = 10f;
-    private float survivalTimer = 0f;
     public override void OnEpisodeBegin()
     {
         rb.linearVelocity = Vector3.zero;
         // transform.localPosition = new Vector3(Random.Range(-8,-1), 0, Random.Range(-8,8));
-        transform.localPosition = new Vector3(-5, 0, 0);
+        transform.localPosition = new Vector3(-7, 0, 4.75f);
         transform.eulerAngles = new Vector3(0,90,0);
-        survivalTimer = 0f;
     }
 
 
@@ -32,24 +28,7 @@ public class EvaderAgent : Agent
     // Define actions that the agent can do
     public override void OnActionReceived(ActionBuffers actions)
     {
-        survivalTimer += Time.deltaTime;
-        
-        if (survivalTimer >= maxSurvivalTime)
-        {
-            // SUCCESS! Agent survived long enough
-            AddReward(+1f);  // Give big reward
-            Debug.Log("Evader won by surviving! " + GetCumulativeReward());
-
-            // Optionally punish the chaser
-            target.GetComponent<ChaserAgent>().AddReward(-1f);
-
-            // End episodes for both agents
-            EndEpisode();
-            target.GetComponent<ChaserAgent>().EndEpisode();
-        }
-        
         AddReward(0.001f);
-        rewardText.text = GetCumulativeReward().ToString("0.000");
         
         float move = actions.ContinuousActions[0];
         float rotate = actions.ContinuousActions[1];

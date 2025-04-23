@@ -9,17 +9,46 @@ public class ChaserAgent : Agent
     [SerializeField] private Rigidbody rb;
     [SerializeField] private MeshRenderer floorRenderer;
     [SerializeField] private float moveSpeed = 4f, rotateSpeed = 4f, jumpForce = 10f, gravity = 9.81f;
-    [SerializeField] private TextMeshPro rewardText;
-    private float distance;
+    [SerializeField] private TextMeshPro episodeText, evaderText, chaserText, timerText;
+    private float maxSurvivalTime = 10f, survivalTimer;
+    private int episodeCounter = -1, chaserCounter, evaderCounter;
     public override void OnEpisodeBegin()
     {
+        HandleStartEpisodeText();
         rb.linearVelocity = Vector3.zero;
         // transform.localPosition = new Vector3(Random.Range(1,8), 0, Random.Range(-8,8));
-        transform.localPosition = new Vector3(5, 0, 0);
+        transform.localPosition = new Vector3(7, 0, 4.75f);
         transform.eulerAngles = new Vector3(0,-90,0);
-        distance = Vector3.Distance(transform.localPosition, target.transform.localPosition);
+        survivalTimer = 0f;
     }
-    
+
+    private void HandleStartEpisodeText()
+    {
+        episodeCounter++;
+        episodeText.text = episodeCounter.ToString();
+        if (episodeCounter == 0)
+        {
+            evaderText.text = "50.0";
+            chaserText.text = "50.0";
+            return;
+        }
+        
+
+        evaderText.text = ((evaderCounter / (float)episodeCounter) * 100f).ToString("00.0");
+        chaserText.text = ((chaserCounter / (float)episodeCounter) * 100f).ToString("00.0");
+
+        if (evaderCounter / (float)episodeCounter > 0.5f)
+        {
+            evaderText.color = Color.green;
+            chaserText.color = Color.red;
+        }
+        else
+        {
+            evaderText.color = Color.red;
+            chaserText.color = Color.green;
+        }
+    }
+
     private void FixedUpdate()
     {
         rb.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
@@ -28,8 +57,24 @@ public class ChaserAgent : Agent
     // Define actions that the agent can do
     public override void OnActionReceived(ActionBuffers actions)
     {
+        survivalTimer += Time.deltaTime;
+        
+        timerText.text = Mathf.RoundToInt(maxSurvivalTime - survivalTimer).ToString();
+        
+        if (survivalTimer >= maxSurvivalTime)
+        {
+            // Agent survived long enough
+            AddReward(-1f);  // Give big reward
+            evaderCounter += 1;
+            
+            target.GetComponent<EvaderAgent>().AddReward(1f);
+
+            // End episodes for both agents
+            EndEpisode();
+            target.GetComponent<EvaderAgent>().EndEpisode();
+        }
+        
         AddReward(-0.001f);
-        rewardText.text = GetCumulativeReward().ToString("0.000");
         
         float move = actions.ContinuousActions[0];
         float rotate = actions.ContinuousActions[1];
@@ -81,8 +126,10 @@ public class ChaserAgent : Agent
         if (other.gameObject.CompareTag("Evader"))
         {
             // Give reward for both
-            AddReward(10f);
-            other.gameObject.GetComponent<EvaderAgent>().AddReward(-10f);
+            AddReward(1f);
+            other.gameObject.GetComponent<EvaderAgent>().AddReward(-1f);
+            
+            chaserCounter += 1;
             
             // End episode for both
             EndEpisode();
